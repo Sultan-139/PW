@@ -1,0 +1,35 @@
+"""
+Tests for the decay simulation.
+
+One complete test is given as a model. Add the two tests described in the
+lab handout (a negative-rate test, and a test against the analytical law).
+Run with:  pytest -v
+"""
+
+import numpy as np
+import pytest
+from decay import simulate, simulate_loop
+
+
+def test_starts_at_N0():
+    # at time zero, no atoms have decayed yet
+    assert simulate(1000, 0.4)[0] == 1000
+
+def test_rejects_negative_rate():   
+    with pytest.raises(ValueError):
+        simulate(N0 = 1000,lam = -0.4) # with pytest.raise
+
+def test_matches_law():
+    N0 = 1000
+    lam = 0.4
+    t = 1
+    expected = N0 * np.exp(-lam * t)
+
+    runs = [
+        simulate(N0, lam, dt=0.01, steps=100, seed=i)[-1]
+        for i in range(50)
+    ]
+
+    avg_result = np.mean(runs)
+
+    assert avg_result == pytest.approx(expected, rel=0.1)
