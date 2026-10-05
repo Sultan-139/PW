@@ -34,4 +34,7 @@ pytest -v
 **Conclusion:**
 - NumPy made the decay simulation much faster than standard Python loops, while unit tests confirmed our results matched the physical law. I fixed a test failure by using the final array index `[-1]` and solved GitHub push issues using a Personal Access Token.
 ---
-
+PW1 Lab B:
+- Data: `decay_observed.csv` shows particle  decreasing over time.
+- Comparison: The observed data matches the analytical decay law well.
+- Automation: The Snakemake pipeline automatically rebuilds `figure.png` whenever the source data or script changes.
