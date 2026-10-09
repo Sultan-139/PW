@@ -38,3 +38,12 @@ PW1 Lab B:
 - Data: `decay_observed.csv` shows particle  decreasing over time.
 - Comparison: The observed data matches the analytical decay law well.
 - Automation: The Snakemake pipeline automatically rebuilds `figure.png` whenever the source data or script changes.
+
+--PW2 Lab A - Motion from Tracking Data
+
+- Mean Acceleration: (-8.58)
+- Standard Deviation of Acceleration: (28.72)
+- Max position recovery difference: (0.7846)
+
+
+Differentiation magnifies high-frequency noise because comparing nearby noisy data points creates sharp, exaggerated changes, whereas integration acts as a cumulative sum where random errors cancel each other out, thereby suppressing the noise.
