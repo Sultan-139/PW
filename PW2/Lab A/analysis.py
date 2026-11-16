@@ -25,7 +25,7 @@ y = data[:, 1]
 v = np.gradient(y, t)
 a = np.gradient(v, t)
 
-# 3. Orta təcil və standart meyli çap edin
+
 print(f"Mean Acceleration: {np.mean(a):.2f} m/s^2")
 print(f"Acceleration Std Dev: {a.std():.2f} m/s^2")
 
